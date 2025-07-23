@@ -1,19 +1,7 @@
 import socket
 
-
-def getIp(ip_add, port_nu):
-    s = socket.socket()
-    res = s.connect_ex((ip_add, port_nu))
-    s.close()
-    return res
+def ipRangeScanner ():
+    protocols = (80 , 8080 , 443 , 53 , 23 , 22 )
+    s = socket.socket();
 
 
-userInput = input("enter your ip address :")
-userInput2 = int(input("enter your port number :"))
-result = getIp(userInput, int(userInput2))
-
-if result ==0:
-    print (f"{userInput2} is open on {userInput}")
-
-else:
-    print (f"{userInput2} is close on {userInput}")
